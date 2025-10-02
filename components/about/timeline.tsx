@@ -3,7 +3,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { slideRotateUp, sophisticatedStagger, parallaxUp } from '@/lib/advanced-motion'
-import { TrendingUp } from 'lucide-react'
 
 const timelineEvents = [
   {
@@ -60,7 +59,7 @@ export function Timeline() {
           variants={parallaxUp}
           className="mb-20 text-center"
         >
-          {/* Decorative icon */}
+          {/* Elegant abstract arrow design */}
           <motion.div
             initial={{ scale: 0, rotate: 90 }}
             whileInView={{ scale: 1, rotate: 0 }}
@@ -68,9 +67,9 @@ export function Timeline() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="flex justify-center mb-6"
           >
-            <div className="relative">
+            <div className="relative w-20 h-20">
               <motion.div
-                className="absolute inset-0 bg-brand-bronze/20 rounded-full blur-xl"
+                className="absolute inset-0 bg-brand-bronze/20 blur-2xl"
                 animate={{
                   scale: [1, 1.2, 1],
                   opacity: [0.5, 0.8, 0.5],
@@ -81,7 +80,39 @@ export function Timeline() {
                   ease: "easeInOut",
                 }}
               />
-              <TrendingUp className="h-12 w-12 text-brand-bronze relative z-10" />
+              <svg className="relative z-10" viewBox="0 0 80 80" fill="none">
+                {/* Upward flowing lines */}
+                <motion.path
+                  d="M 20 60 L 30 40 L 40 50 L 50 30 L 60 20"
+                  stroke="url(#timeline-bronze)"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                />
+                {/* Arrow head */}
+                <motion.path
+                  d="M 55 25 L 60 20 L 65 25"
+                  stroke="url(#timeline-bronze)"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 0.8, delay: 0.5, ease: "easeInOut" }}
+                />
+                <defs>
+                  <linearGradient id="timeline-bronze" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#B8956A" />
+                    <stop offset="50%" stopColor="#C9A877" />
+                    <stop offset="100%" stopColor="#8B7355" />
+                  </linearGradient>
+                </defs>
+              </svg>
             </div>
           </motion.div>
 

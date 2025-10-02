@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
-import { Quote, Linkedin, Mail, ArrowRight } from 'lucide-react'
+import { Linkedin, Mail, ArrowRight } from 'lucide-react'
 import { useRef } from 'react'
 
 const founders = [
@@ -93,7 +93,7 @@ export function Founders() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-20"
         >
-          {/* Decorative icon with bronze glow */}
+          {/* Elegant abstract geometric design */}
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
             whileInView={{ scale: 1, rotate: 0 }}
@@ -101,9 +101,9 @@ export function Founders() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="flex justify-center mb-6"
           >
-            <div className="relative">
+            <div className="relative w-20 h-20">
               <motion.div
-                className="absolute inset-0 bg-brand-bronze/20 rounded-full blur-xl"
+                className="absolute inset-0 bg-brand-bronze/20 blur-2xl"
                 animate={{
                   scale: [1, 1.3, 1],
                   opacity: [0.5, 0.8, 0.5],
@@ -114,9 +114,51 @@ export function Founders() {
                   ease: "easeInOut",
                 }}
               />
-              <div className="relative bg-gradient-to-br from-brand-bronze via-brand-bronze-light to-brand-bronze p-4 rounded-full">
-                <Quote className="h-10 w-10 text-white relative z-10" />
-              </div>
+              {/* Interlocking circles design */}
+              <motion.svg
+                className="relative z-10"
+                viewBox="0 0 80 80"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <motion.circle
+                  cx="30"
+                  cy="40"
+                  r="18"
+                  stroke="url(#bronze-gradient)"
+                  strokeWidth="2"
+                  fill="none"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                />
+                <motion.circle
+                  cx="50"
+                  cy="40"
+                  r="18"
+                  stroke="url(#bronze-gradient)"
+                  strokeWidth="2"
+                  fill="none"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 1.5, delay: 0.2, ease: "easeInOut" }}
+                />
+                <motion.path
+                  d="M 40 25 L 40 55"
+                  stroke="url(#bronze-gradient)"
+                  strokeWidth="2"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 1, delay: 0.4, ease: "easeInOut" }}
+                />
+                <defs>
+                  <linearGradient id="bronze-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#B8956A" />
+                    <stop offset="50%" stopColor="#C9A877" />
+                    <stop offset="100%" stopColor="#8B7355" />
+                  </linearGradient>
+                </defs>
+              </motion.svg>
             </div>
           </motion.div>
 
@@ -190,7 +232,7 @@ export function Founders() {
                   {/* Bronze glow on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-t from-brand-bronze/20 via-transparent to-transparent transition-opacity duration-500 ${hoveredId === founder.id ? 'opacity-100' : 'opacity-0'}`} />
                   
-                  {/* Quote Icon with bronze background - appears on hover */}
+                  {/* Abstract geometric badge - appears on hover */}
                   <motion.div
                     className="absolute top-6 right-6"
                     initial={{ opacity: 0, scale: 0, rotate: -180 }}
@@ -201,8 +243,9 @@ export function Founders() {
                     }}
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    <div className="bg-brand-bronze p-3 rounded-full shadow-lg">
-                      <Quote className="h-6 w-6 text-white" />
+                    <div className="relative w-14 h-14 bg-gradient-to-br from-brand-bronze via-brand-bronze-light to-brand-bronze rounded-xl shadow-lg flex items-center justify-center">
+                      <div className="absolute inset-2 border-2 border-white/30 rounded-lg" />
+                      <div className="absolute w-2 h-2 bg-white rounded-full" />
                     </div>
                   </motion.div>
 
@@ -312,7 +355,7 @@ export function Founders() {
                             </p>
                           </div>
 
-                          {/* Quote with bronze accent */}
+                          {/* Quote with bronze accent and elegant abstract design */}
                           <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -320,7 +363,11 @@ export function Founders() {
                             className="relative bg-gradient-to-br from-brand-bronze/5 to-brand-sage/5 p-8 rounded-2xl mb-6 border-l-4 border-brand-bronze overflow-hidden"
                           >
                             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-bronze/5 rounded-full blur-2xl" />
-                            <Quote className="absolute top-4 right-4 h-10 w-10 text-brand-bronze/20" />
+                            {/* Abstract geometric quote mark */}
+                            <div className="absolute top-6 right-6 w-10 h-10 opacity-20">
+                              <div className="absolute w-4 h-4 border-t-2 border-l-2 border-brand-bronze rounded-tl-lg" />
+                              <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-brand-bronze rounded-br-lg" />
+                            </div>
                             <p className="text-lg lg:text-xl font-body text-neutral-700 italic leading-relaxed relative z-10">
                               &ldquo;{founder.quote}&rdquo;
                             </p>

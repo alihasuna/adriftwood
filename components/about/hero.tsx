@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
-import { ChevronDown, Sparkles } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 
 export function AboutHero() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -70,7 +70,7 @@ export function AboutHero() {
       {/* Oversized Typography - Center */}
       <div className="relative z-10 container mx-auto px-6 lg:px-12">
         <div className="max-w-7xl mx-auto text-center">
-          {/* Decorative top element */}
+          {/* Decorative top element - elegant abstract shapes */}
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -83,7 +83,16 @@ export function AboutHero() {
               animate={{ scaleX: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             />
-            <Sparkles className="h-5 w-5 text-brand-bronze" />
+            {/* Abstract geometric shape */}
+            <motion.div
+              className="relative w-8 h-8"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            >
+              <div className="absolute inset-0 border-2 border-brand-bronze/40 rotate-45" />
+              <div className="absolute inset-2 border-2 border-brand-bronze-light" />
+              <div className="absolute inset-0 bg-brand-bronze/10 backdrop-blur-sm" />
+            </motion.div>
             <motion.div 
               className="h-px w-16 bronze-gradient"
               initial={{ scaleX: 0 }}
