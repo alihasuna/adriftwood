@@ -86,7 +86,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Product Info - Minimal typography */}
         <div className="space-y-2">
-          <h3 className="text-lg font-display font-bold text-neutral-900 tracking-tight">
+          <h3 className="text-lg font-display font-normal text-neutral-900 tracking-tight">
             {product.name}
           </h3>
           <p className="text-sm font-body text-neutral-500 uppercase tracking-wider">

@@ -38,7 +38,7 @@ export function ContactInfo() {
       <div className="space-y-6">
         <div className="flex items-center gap-3 mb-6">
           <div className="h-px w-8 bronze-gradient" />
-          <span className="text-xs font-body text-[#A68D76] tracking-[0.15em] uppercase">
+          <span className="text-xs font-body text-brand-bronze-dark tracking-[0.15em] uppercase">
             Reach Out
           </span>
         </div>
@@ -48,7 +48,7 @@ export function ContactInfo() {
             const IconComponent = method.icon
             const content = (
               <motion.div
-                className="group relative flex items-start gap-4 p-4 bg-white/40 border border-[#D4A574]/20 hover:border-[#D4A574]/40 transition-all duration-300 cursor-pointer"
+                className="group relative flex items-start gap-4 p-4 bg-white/40 border border-brand-bronze/20 hover:border-brand-bronze/40 transition-all duration-300 cursor-pointer"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -56,18 +56,18 @@ export function ContactInfo() {
               >
                 {/* Hover effect */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-[#F5EFE6]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 bg-brand-sage/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 />
 
-                <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-[#D4A574]/20 to-[#BFA68F]/10 group-hover:from-[#D4A574]/30 group-hover:to-[#BFA68F]/20 transition-all duration-300">
-                  <IconComponent className="w-5 h-5 text-[#3D2F1F]" />
+                <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-brand-bronze/10 group-hover:bg-brand-bronze/20 transition-all duration-300">
+                  <IconComponent className="w-5 h-5 text-brand-pine" />
                 </div>
 
                 <div className="relative z-10 flex-1 min-w-0">
-                  <div className="text-xs font-body text-[#A68D76] uppercase tracking-wider mb-1">
+                  <div className="text-xs font-body text-brand-bronze-dark uppercase tracking-wider mb-1">
                     {method.label}
                   </div>
-                  <div className="text-sm font-body text-[#3D2F1F] font-medium break-words">
+                  <div className="text-sm font-body text-brand-pine font-medium break-words">
                     {method.value}
                   </div>
                 </div>
@@ -75,7 +75,7 @@ export function ContactInfo() {
                 {/* Arrow indicator for clickable items */}
                 {method.href && (
                   <div className="relative z-10 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <svg className="w-4 h-4 text-[#D4A574]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-brand-bronze" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
@@ -102,7 +102,7 @@ export function ContactInfo() {
 
       {/* Separator */}
       <motion.div
-        className="h-px bg-gradient-to-r from-transparent via-[#D4A574]/40 to-transparent"
+        className="h-px bronze-gradient opacity-40"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
         transition={{ delay: 0.6, duration: 0.8 }}
@@ -113,13 +113,13 @@ export function ContactInfo() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
-        className="relative p-6 bg-gradient-to-br from-[#F5EFE6]/40 to-white/40 border border-[#D4A574]/20"
+        className="relative p-6 bg-white/40 border border-brand-bronze/20"
       >
         <div className="flex items-center gap-3 mb-4">
-          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[#D4A574]/20 to-[#BFA68F]/10">
-            <Globe className="w-5 h-5 text-[#3D2F1F]" />
+          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-brand-bronze/10">
+            <Globe className="w-5 h-5 text-brand-pine" />
           </div>
-          <h3 className="text-lg font-display font-bold text-[#3D2F1F]">
+          <h3 className="text-lg font-display font-normal text-brand-pine">
             Service Area
           </h3>
         </div>
@@ -134,32 +134,32 @@ export function ContactInfo() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
-        className="relative p-6 bg-gradient-to-br from-white/40 to-[#F5EFE6]/40 border border-[#D4A574]/20"
+        className="relative p-6 bg-white/40 border border-brand-bronze/20"
       >
         <div className="flex items-center gap-3 mb-4">
-          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[#D4A574]/20 to-[#BFA68F]/10">
-            <Clock className="w-5 h-5 text-[#3D2F1F]" />
+          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-brand-bronze/10">
+            <Clock className="w-5 h-5 text-brand-pine" />
           </div>
-          <h3 className="text-lg font-display font-bold text-[#3D2F1F]">
+          <h3 className="text-lg font-display font-normal text-brand-pine">
             Workshop Hours
           </h3>
         </div>
         <div className="space-y-2">
           <div className="flex justify-between items-center text-sm font-body">
-            <span className="text-[#A68D76]">Monday - Friday</span>
-            <span className="text-[#3D2F1F] font-medium">9:00 AM - 5:00 PM</span>
+            <span className="text-brand-bronze-dark">Monday - Friday</span>
+            <span className="text-brand-pine font-medium">9:00 AM - 5:00 PM</span>
           </div>
           <div className="flex justify-between items-center text-sm font-body">
-            <span className="text-[#A68D76]">Saturday</span>
-            <span className="text-[#3D2F1F] font-medium">10:00 AM - 4:00 PM</span>
+            <span className="text-brand-bronze-dark">Saturday</span>
+            <span className="text-brand-pine font-medium">10:00 AM - 4:00 PM</span>
           </div>
           <div className="flex justify-between items-center text-sm font-body">
-            <span className="text-[#A68D76]">Sunday</span>
-            <span className="text-[#3D2F1F] font-medium">Closed</span>
+            <span className="text-brand-bronze-dark">Sunday</span>
+            <span className="text-brand-pine font-medium">Closed</span>
           </div>
         </div>
-        <div className="mt-4 pt-4 border-t border-[#D4A574]/20">
-          <p className="text-xs font-body text-[#A68D76] tracking-wide">
+        <div className="mt-4 pt-4 border-t border-brand-bronze/20">
+          <p className="text-xs font-body text-brand-bronze-dark tracking-wide">
             * Workshop visits by appointment only
           </p>
         </div>
@@ -172,9 +172,9 @@ export function ContactInfo() {
         animate={{ opacity: 0.5 }}
         transition={{ delay: 0.8 }}
       >
-        <div className="h-px w-8 bg-[#D4A574]" />
-        <div className="w-1.5 h-1.5 rounded-full bg-[#D4A574]" />
-        <div className="h-px w-8 bg-[#D4A574]" />
+        <div className="h-px w-8 bg-brand-bronze" />
+        <div className="w-1.5 h-1.5 rounded-full bg-brand-bronze" />
+        <div className="h-px w-8 bg-brand-bronze" />
       </motion.div>
     </div>
   )

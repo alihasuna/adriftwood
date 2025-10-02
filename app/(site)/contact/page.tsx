@@ -6,32 +6,7 @@ import { motion } from 'framer-motion'
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-neutral-50 via-[#F5EFE6] to-neutral-50 relative overflow-hidden">
-      {/* Animated Background Elements - Sunset Forest Theme */}
-      <motion.div
-        className="absolute top-0 left-0 right-0 h-[600px] opacity-20 pointer-events-none"
-        animate={{
-          background: [
-            'radial-gradient(circle at 20% 30%, rgba(212, 165, 116, 0.4) 0%, transparent 50%)',
-            'radial-gradient(circle at 80% 40%, rgba(232, 201, 163, 0.3) 0%, transparent 50%)',
-            'radial-gradient(circle at 20% 30%, rgba(212, 165, 116, 0.4) 0%, transparent 50%)',
-          ],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      />
-
-      {/* Subtle texture overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D4A574' fill-opacity='0.4'%3E%3Cpath d='M0 0h40v40H0V0zm20 20v20h20V20H20z'/%3E%3C/g%3E%3C/svg%3E")`,
-        }}
-      />
-
+    <div className="min-h-screen bg-neutral-50 relative overflow-hidden">
       {/* Hero Section */}
       <div className="relative pt-32 lg:pt-40 pb-16 lg:pb-20">
         <div className="container mx-auto px-6 lg:px-12">
@@ -44,14 +19,14 @@ export default function ContactPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="h-px w-16 bronze-gradient" />
-              <span className="text-xs font-body text-[#A68D76] tracking-[0.2em] uppercase">
+              <span className="text-xs font-body text-brand-bronze-dark tracking-[0.2em] uppercase">
                 Let&apos;s Connect
               </span>
             </motion.div>
 
             {/* Large Title */}
             <motion.h1
-              className="text-[12vw] sm:text-[10vw] lg:text-[8vw] font-display font-bold text-[#3D2F1F] leading-[0.9] mb-6"
+              className="text-[12vw] sm:text-[10vw] lg:text-[8vw] font-display font-normal text-brand-pine leading-[0.9] mb-6"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -80,8 +55,8 @@ export default function ContactPage() {
               transition={{ duration: 0.8, delay: 0.7 }}
             >
               <div className="relative">
-                <div className="absolute w-24 h-24 border border-[#D4A574]/30 rounded-full" />
-                <div className="absolute w-24 h-24 border border-[#D4A574]/20 rounded-full animate-ping" 
+                <div className="absolute w-24 h-24 border border-brand-bronze/30 rounded-full" />
+                <div className="absolute w-24 h-24 border border-brand-bronze/20 rounded-full animate-ping" 
                      style={{ animationDuration: '3s' }} />
               </div>
             </motion.div>
@@ -93,7 +68,7 @@ export default function ContactPage() {
       <div className="relative container mx-auto px-6 lg:px-12 pb-24">
         {/* Decorative top line */}
         <motion.div
-          className="h-px bg-gradient-to-r from-transparent via-[#D4A574]/50 to-transparent mb-16"
+          className="h-px bronze-gradient mb-16"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
@@ -132,9 +107,9 @@ export default function ContactPage() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <div className="h-px w-16 bg-gradient-to-r from-transparent to-[#D4A574]/60" />
-          <div className="w-2 h-2 rounded-full bg-[#D4A574]/60" />
-          <div className="h-px w-16 bg-gradient-to-l from-transparent to-[#D4A574]/60" />
+          <div className="h-px w-16 bronze-gradient opacity-60" />
+          <div className="w-2 h-2 rounded-full bg-brand-bronze opacity-60" />
+          <div className="h-px w-16 bronze-gradient opacity-60" />
         </motion.div>
       </div>
     </div>

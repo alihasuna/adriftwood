@@ -63,7 +63,7 @@ export function CategoryTiles() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl lg:text-6xl font-display font-bold tracking-tighter text-neutral-900 mb-4">
+          <h2 className="text-5xl lg:text-6xl font-display font-normal tracking-tighter text-neutral-900 mb-4">
             EXPLORE
           </h2>
           <motion.div 
@@ -150,7 +150,7 @@ export function CategoryTiles() {
                       transition={{ duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
                     >
                       <motion.h3 
-                        className="text-3xl font-display font-bold text-neutral-50 tracking-tight mb-2"
+                        className="text-3xl font-display font-normal text-neutral-50 tracking-tight mb-2"
                         whileHover={{ 
                           scale: 1.05,
                           color: '#D4C3B1',
