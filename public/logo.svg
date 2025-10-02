@@ -1,0 +1,16 @@
+<svg width="60" height="120" viewBox="0 0 60 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tree trunk -->
+  <path d="M26 95 L26 115 L34 115 L34 95 Z" fill="currentColor"/>
+  
+  <!-- Bottom branch layer -->
+  <path d="M10 95 L30 70 L50 95 Z" fill="currentColor"/>
+  
+  <!-- Second layer -->
+  <path d="M14 70 L30 48 L46 70 Z" fill="currentColor"/>
+  
+  <!-- Third layer -->
+  <path d="M18 48 L30 28 L42 48 Z" fill="currentColor"/>
+  
+  <!-- Top layer -->
+  <path d="M22 28 L30 10 L38 28 Z" fill="currentColor"/>
+</svg>

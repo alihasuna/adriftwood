@@ -1,0 +1,7 @@
+Create a favicon from your tree logo by:
+1. Visit https://favicon.io/favicon-converter/
+2. Upload your tree SVG (/public/logo.svg)
+3. Download the generated favicon.ico
+4. Replace this file
+
+Or use an online SVG to ICO converter.
