@@ -9,20 +9,17 @@ const stats = [
     value: '100%',
     label: 'Sustainably Sourced Wood',
     isNumber: false,
-    pattern: 'tree',
   },
   {
     value: 'Carbon Neutral',
     label: 'Production Since 2024',
     isNumber: false,
-    pattern: 'leaf',
   },
   {
     value: '6',
     targetValue: 6,
     label: 'Master Artisans',
     isNumber: true,
-    pattern: 'circles',
   },
   {
     value: '500+',
@@ -30,7 +27,6 @@ const stats = [
     label: 'Pieces Crafted',
     isNumber: true,
     suffix: '+',
-    pattern: 'hexagon',
   },
 ]
 
@@ -61,132 +57,6 @@ function AnimatedCounter({ targetValue, suffix = '', duration = 2000 }: { target
   }, [isInView, targetValue, duration])
 
   return <div ref={ref}>{count}{suffix}</div>
-}
-
-// Abstract Pattern Components
-function AbstractPattern({ pattern, index }: { pattern: string; index: number }) {
-  const patterns: Record<string, JSX.Element> = {
-    tree: (
-      <svg className="w-full h-full" viewBox="0 0 60 60" fill="none">
-        <motion.path
-          d="M 30 10 L 35 20 L 25 20 Z"
-          stroke="url(#bronze-grad-tree)"
-          strokeWidth="1.5"
-          fill="none"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          transition={{ duration: 1.2, delay: index * 0.1 }}
-        />
-        <motion.path
-          d="M 30 17 L 37 30 L 23 30 Z"
-          stroke="url(#bronze-grad-tree)"
-          strokeWidth="1.5"
-          fill="none"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          transition={{ duration: 1.2, delay: index * 0.1 + 0.2 }}
-        />
-        <motion.rect
-          x="28"
-          y="30"
-          width="4"
-          height="10"
-          stroke="url(#bronze-grad-tree)"
-          strokeWidth="1.5"
-          fill="none"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          transition={{ duration: 0.8, delay: index * 0.1 + 0.4 }}
-        />
-        <defs>
-          <linearGradient id="bronze-grad-tree" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#B8956A" />
-            <stop offset="100%" stopColor="#C9A877" />
-          </linearGradient>
-        </defs>
-      </svg>
-    ),
-    leaf: (
-      <svg className="w-full h-full" viewBox="0 0 60 60" fill="none">
-        <motion.path
-          d="M 30 15 Q 40 20 45 35 Q 42 45 30 50 Q 18 45 15 35 Q 20 20 30 15"
-          stroke="url(#bronze-grad-leaf)"
-          strokeWidth="1.5"
-          fill="none"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          transition={{ duration: 1.5, delay: index * 0.1 }}
-        />
-        <motion.path
-          d="M 30 15 L 30 50"
-          stroke="url(#bronze-grad-leaf)"
-          strokeWidth="1"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          transition={{ duration: 1, delay: index * 0.1 + 0.3 }}
-        />
-        <defs>
-          <linearGradient id="bronze-grad-leaf" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#B8956A" />
-            <stop offset="100%" stopColor="#C9A877" />
-          </linearGradient>
-        </defs>
-      </svg>
-    ),
-    circles: (
-      <svg className="w-full h-full" viewBox="0 0 60 60" fill="none">
-        {[20, 30, 40].map((r, i) => (
-          <motion.circle
-            key={i}
-            cx="30"
-            cy="30"
-            r={r / 2}
-            stroke="url(#bronze-grad-circles)"
-            strokeWidth="1.5"
-            fill="none"
-            initial={{ pathLength: 0, opacity: 0 }}
-            whileInView={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 1.2, delay: index * 0.1 + i * 0.2 }}
-          />
-        ))}
-        <defs>
-          <linearGradient id="bronze-grad-circles" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#B8956A" />
-            <stop offset="100%" stopColor="#C9A877" />
-          </linearGradient>
-        </defs>
-      </svg>
-    ),
-    hexagon: (
-      <svg className="w-full h-full" viewBox="0 0 60 60" fill="none">
-        <motion.path
-          d="M 30 15 L 42 22.5 L 42 37.5 L 30 45 L 18 37.5 L 18 22.5 Z"
-          stroke="url(#bronze-grad-hex)"
-          strokeWidth="1.5"
-          fill="none"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          transition={{ duration: 1.5, delay: index * 0.1 }}
-        />
-        <motion.path
-          d="M 25 20 L 35 40 M 35 20 L 25 40"
-          stroke="url(#bronze-grad-hex)"
-          strokeWidth="1"
-          initial={{ pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          transition={{ duration: 1, delay: index * 0.1 + 0.3 }}
-        />
-        <defs>
-          <linearGradient id="bronze-grad-hex" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#B8956A" />
-            <stop offset="100%" stopColor="#C9A877" />
-          </linearGradient>
-        </defs>
-      </svg>
-    ),
-  }
-
-  return patterns[pattern] || patterns.circles
 }
 
 export function FactoryStats() {
@@ -323,7 +193,7 @@ export function FactoryStats() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
@@ -336,7 +206,7 @@ export function FactoryStats() {
               variants={scaleBlurIn}
             >
               <motion.div
-                className="relative text-center p-10 rounded-3xl bg-white shadow-lg hover:shadow-2xl border border-neutral-200 hover:border-brand-bronze/50 transition-all duration-500 overflow-hidden"
+                className="relative text-center p-8 rounded-3xl bg-white shadow-lg hover:shadow-2xl border border-neutral-200 hover:border-brand-bronze/50 transition-all duration-500 overflow-hidden"
                 initial="rest"
                 whileHover="hover"
                 variants={magneticHover}
@@ -350,41 +220,8 @@ export function FactoryStats() {
                 <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-brand-bronze/20 rounded-tl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-brand-bronze/20 rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* Abstract pattern with floating animation */}
-                <motion.div 
-                  className="flex justify-center mb-8 relative z-10"
-                  animate={{ 
-                    y: [0, -15, 0],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: index * 0.3,
-                  }}
-                >
-                  <div className="relative w-20 h-20">
-                    <motion.div
-                      className="absolute inset-0 bg-brand-bronze/15 rounded-full blur-2xl"
-                      animate={{
-                        scale: [1, 1.4, 1],
-                        opacity: [0.3, 0.6, 0.3],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: index * 0.2,
-                      }}
-                    />
-                    <div className="relative">
-                      <AbstractPattern pattern={stat.pattern} index={index} />
-                    </div>
-                  </div>
-                </motion.div>
-
                 {/* Value with counter animation */}
-                <div className="text-5xl lg:text-6xl font-display font-bold mb-5 bg-gradient-to-br from-brand-pine to-brand-bronze bg-clip-text text-transparent relative z-10">
+                <div className="text-4xl lg:text-5xl font-display font-bold mb-4 bg-gradient-to-br from-brand-pine to-brand-bronze bg-clip-text text-transparent relative z-10">
                   {stat.isNumber && stat.targetValue ? (
                     <AnimatedCounter targetValue={stat.targetValue} suffix={stat.suffix} />
                   ) : (

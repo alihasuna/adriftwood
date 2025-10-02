@@ -3,7 +3,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { parallaxUp, sophisticatedStagger, fadeBlurUp } from '@/lib/advanced-motion'
-import { Leaf, Heart, Sparkles } from 'lucide-react'
 
 export function AboutManifesto() {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -41,31 +40,6 @@ export function AboutManifesto() {
             variants={parallaxUp}
             className="mb-20 text-center"
           >
-            {/* Decorative icon */}
-            <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              whileInView={{ scale: 1, rotate: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="flex justify-center mb-6"
-            >
-              <div className="relative">
-                <motion.div
-                  className="absolute inset-0 bg-brand-bronze/20 rounded-full blur-xl"
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.5, 0.8, 0.5],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
-                <Heart className="h-12 w-12 text-brand-bronze relative z-10" fill="currentColor" />
-              </div>
-            </motion.div>
-
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-brand-pine mb-6">
               Crafted with Intention
             </h2>
@@ -106,37 +80,23 @@ export function AboutManifesto() {
               className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
             >
               <div className="bg-white p-8 rounded-2xl shadow-sm border border-brand-sage/20 hover:shadow-md transition-shadow duration-300">
-                <div className="flex items-start gap-4">
-                  <div className="mt-1">
-                    <Leaf className="h-6 w-6 text-brand-bronze" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-display font-semibold text-brand-pine mb-3">
-                      Sustainable Materials
-                    </h3>
-                    <p className="text-base leading-relaxed text-neutral-600">
-                      We work exclusively with sustainably harvested hardwoods—white oak, walnut, maple, 
-                      and ash—each chosen for its beauty, strength, and grain.
-                    </p>
-                  </div>
-                </div>
+                <h3 className="text-lg font-display font-semibold text-brand-pine mb-3">
+                  Sustainable Materials
+                </h3>
+                <p className="text-base leading-relaxed text-neutral-600">
+                  We work exclusively with sustainably harvested hardwoods—white oak, walnut, maple, 
+                  and ash—each chosen for its beauty, strength, and grain.
+                </p>
               </div>
 
               <div className="bg-white p-8 rounded-2xl shadow-sm border border-brand-sage/20 hover:shadow-md transition-shadow duration-300">
-                <div className="flex items-start gap-4">
-                  <div className="mt-1">
-                    <Sparkles className="h-6 w-6 text-brand-bronze" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-display font-semibold text-brand-pine mb-3">
-                      Timeless Craft
-                    </h3>
-                    <p className="text-base leading-relaxed text-neutral-600">
-                      Every cut, joint, and finish is executed by hand, following time-tested techniques 
-                      passed down through generations of woodworkers.
-                    </p>
-                  </div>
-                </div>
+                <h3 className="text-lg font-display font-semibold text-brand-pine mb-3">
+                  Timeless Craft
+                </h3>
+                <p className="text-base leading-relaxed text-neutral-600">
+                  Every cut, joint, and finish is executed by hand, following time-tested techniques 
+                  passed down through generations of woodworkers.
+                </p>
               </div>
             </motion.div>
             
@@ -159,14 +119,6 @@ export function AboutManifesto() {
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-brand-pine/10 rounded-full blur-2xl" />
               
               <div className="relative z-10">
-                <div className="flex justify-center mb-6">
-                  <motion.div
-                    animate={{ rotate: [0, 10, -10, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <Leaf className="h-10 w-10 text-white" />
-                  </motion.div>
-                </div>
                 <p className="text-xl sm:text-2xl lg:text-3xl leading-relaxed font-light text-center max-w-3xl mx-auto text-white">
                   Sustainability isn&apos;t a marketing term for us—it&apos;s a core value.
                 </p>
