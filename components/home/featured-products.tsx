@@ -20,7 +20,7 @@ export function FeaturedProducts() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl lg:text-6xl font-display font-bold tracking-tighter text-neutral-900 mb-4">
+            <h2 className="text-5xl lg:text-6xl font-display font-normal tracking-tighter text-neutral-900 mb-4">
               FEATURED
             </h2>
             <div className="h-px w-32 bg-neutral-900" />

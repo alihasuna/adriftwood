@@ -53,8 +53,8 @@ function StoreContent() {
     <div className="min-h-screen bg-neutral-50">
       {/* Header */}
       <div className="bg-neutral-100 border-b border-neutral-200">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h1 className="text-4xl sm:text-5xl font-display font-bold text-brand-pine mb-4">
+        <div className="container mx-auto px-6 lg:px-12 py-16">
+          <h1 className="text-4xl sm:text-5xl font-display font-normal text-brand-pine mb-4">
             Shop
           </h1>
           <p className="text-lg font-body text-neutral-600">
@@ -65,7 +65,7 @@ function StoreContent() {
 
       {/* Filters Bar */}
       <div className="sticky top-16 z-30 bg-neutral-50 border-b border-neutral-200">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="container mx-auto px-6 lg:px-12 py-4">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <CategoryChips
               selected={selectedCategory}
@@ -90,7 +90,7 @@ function StoreContent() {
       </div>
 
       {/* Products Grid */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="container mx-auto px-6 lg:px-12 py-16">
         <div className="mb-6">
           <p className="text-sm font-body text-neutral-600">
             {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'}

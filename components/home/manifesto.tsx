@@ -19,7 +19,7 @@ export function Manifesto() {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
           >
-            <h2 className="text-[10vw] sm:text-[8vw] lg:text-[6vw] font-display font-bold leading-[0.9] tracking-tighter text-neutral-900 mb-6">
+            <h2 className="text-[10vw] sm:text-[8vw] lg:text-[6vw] font-display font-normal leading-[0.9] tracking-tighter text-neutral-900 mb-6">
               {words.map((word, wordIndex) => (
                 <span key={wordIndex} className="inline-block">
                   {word.split('').map((char, charIndex) => (

@@ -73,7 +73,7 @@ export function CollectionsHero() {
         style={{ x: xParallax, y: yParallax }}
       >
         <div className="max-w-7xl">
-          <h1 className="text-[14vw] sm:text-[12vw] lg:text-[10vw] font-display font-bold text-neutral-50 leading-[0.9] mb-8">
+          <h1 className="text-[14vw] sm:text-[12vw] lg:text-[10vw] font-display font-normal text-neutral-50 leading-[0.9] mb-8">
             <motion.div 
               className={`overflow-hidden ${hasLoaded ? 'animate-hero-reveal' : 'opacity-0'}`}
               style={{ animationDelay: '0.3s', animationFillMode: 'both' }}

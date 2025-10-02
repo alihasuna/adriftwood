@@ -8,9 +8,9 @@ export function NewsletterCTA() {
   const sectionRef = useRef<HTMLElement>(null)
 
   return (
-    <section ref={sectionRef} className="py-32 bg-brand-pine relative overflow-hidden">
+    <section ref={sectionRef} className="py-32 bg-neutral-900 relative overflow-hidden">
       {/* Bronze gradient accent */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bronze-gradient opacity-10" />
+      <div className="absolute top-0 right-0 w-1/3 h-full bronze-gradient opacity-20" />
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-4xl">

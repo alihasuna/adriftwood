@@ -44,7 +44,7 @@ export function Hero() {
       <div className="relative z-10 container mx-auto px-6 lg:px-12">
         <div className="max-w-7xl">
           {/* Elegant animated title - Alta Caption Regular */}
-          <h1 className="text-[14vw] sm:text-[12vw] lg:text-[11vw] font-display font-bold text-neutral-50 leading-[0.9] mb-12">
+          <h1 className="text-[14vw] sm:text-[12vw] lg:text-[11vw] font-display font-normal text-neutral-50 leading-[0.9] mb-12">
             <div 
               className={`overflow-hidden ${hasLoaded ? 'animate-hero-reveal' : 'opacity-0'}`}
               style={{ animationDelay: '0.3s', animationFillMode: 'both' }}

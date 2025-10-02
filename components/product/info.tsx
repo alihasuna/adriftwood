@@ -30,10 +30,10 @@ export function ProductInfo({ product }: ProductInfoProps) {
     <div className="flex flex-col">
       {/* Title & Price */}
       <div className="mb-6">
-        <h1 className="text-3xl sm:text-4xl font-display font-bold text-brand-pine mb-2">
+        <h1 className="text-3xl sm:text-4xl font-display font-normal text-brand-pine mb-2">
           {product.name}
         </h1>
-        <p className="text-2xl font-display font-semibold text-neutral-900">
+        <p className="text-2xl font-body font-medium text-neutral-900">
           {formatPrice(product.price)}
         </p>
       </div>

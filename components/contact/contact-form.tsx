@@ -29,22 +29,22 @@ export function ContactForm() {
   return (
     <div className="relative">
       {/* Background card with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-[#F5EFE6]/60 to-white/80 backdrop-blur-sm rounded-sm border border-[#D4A574]/20" />
+      <div className="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-sm border border-brand-bronze/20" />
       
       {/* Decorative corner accents */}
-      <div className="absolute top-0 left-0 w-16 h-16 border-l border-t border-[#D4A574]/30" />
-      <div className="absolute bottom-0 right-0 w-16 h-16 border-r border-b border-[#D4A574]/30" />
+      <div className="absolute top-0 left-0 w-16 h-16 border-l border-t border-brand-bronze/30" />
+      <div className="absolute bottom-0 right-0 w-16 h-16 border-r border-b border-brand-bronze/30" />
 
       <div className="relative p-8 lg:p-10">
         {/* Header */}
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-8 bronze-gradient" />
-            <span className="text-xs font-body text-[#A68D76] tracking-[0.15em] uppercase">
+            <span className="text-xs font-body text-brand-bronze-dark tracking-[0.15em] uppercase">
               Send Message
             </span>
           </div>
-          <h2 className="text-3xl lg:text-4xl font-display font-bold text-[#3D2F1F] mb-3">
+          <h2 className="text-3xl lg:text-4xl font-display font-normal text-brand-pine mb-3">
             Tell us about
             <br />
             your project
@@ -60,7 +60,7 @@ export function ContactForm() {
           >
             <label
               htmlFor="name"
-              className="block text-sm font-body font-medium text-[#3D2F1F] mb-2 tracking-wide"
+              className="block text-sm font-body font-medium text-brand-pine mb-2 tracking-wide"
             >
               Your Name
             </label>
@@ -73,12 +73,12 @@ export function ContactForm() {
                 onFocus={() => setFocusedField('name')}
                 onBlur={() => setFocusedField(null)}
                 required
-                className="w-full px-4 py-3 bg-white/60 border border-neutral-300 focus:border-[#D4A574] focus:outline-none transition-all duration-300 font-body text-neutral-900 placeholder-neutral-400"
+                className="w-full px-4 py-3 bg-white/60 border border-neutral-300 focus:border-brand-bronze focus:outline-none transition-all duration-300 font-body text-neutral-900 placeholder-neutral-400"
                 placeholder="John Smith"
               />
               {focusedField === 'name' && (
                 <motion.div
-                  className="absolute -bottom-px left-0 h-px bg-gradient-to-r from-[#D4A574] to-[#E8C9A3]"
+                  className="absolute -bottom-px left-0 h-px bronze-gradient"
                   initial={{ width: 0 }}
                   animate={{ width: '100%' }}
                   transition={{ duration: 0.3 }}
@@ -95,7 +95,7 @@ export function ContactForm() {
           >
             <label
               htmlFor="email"
-              className="block text-sm font-body font-medium text-[#3D2F1F] mb-2 tracking-wide"
+              className="block text-sm font-body font-medium text-brand-pine mb-2 tracking-wide"
             >
               Email Address
             </label>
@@ -108,12 +108,12 @@ export function ContactForm() {
                 onFocus={() => setFocusedField('email')}
                 onBlur={() => setFocusedField(null)}
                 required
-                className="w-full px-4 py-3 bg-white/60 border border-neutral-300 focus:border-[#D4A574] focus:outline-none transition-all duration-300 font-body text-neutral-900 placeholder-neutral-400"
+                className="w-full px-4 py-3 bg-white/60 border border-neutral-300 focus:border-brand-bronze focus:outline-none transition-all duration-300 font-body text-neutral-900 placeholder-neutral-400"
                 placeholder="hello@example.com"
               />
               {focusedField === 'email' && (
                 <motion.div
-                  className="absolute -bottom-px left-0 h-px bg-gradient-to-r from-[#D4A574] to-[#E8C9A3]"
+                  className="absolute -bottom-px left-0 h-px bronze-gradient"
                   initial={{ width: 0 }}
                   animate={{ width: '100%' }}
                   transition={{ duration: 0.3 }}
@@ -130,7 +130,7 @@ export function ContactForm() {
           >
             <label
               htmlFor="topic"
-              className="block text-sm font-body font-medium text-[#3D2F1F] mb-2 tracking-wide"
+              className="block text-sm font-body font-medium text-brand-pine mb-2 tracking-wide"
             >
               What can we help with?
             </label>
@@ -141,7 +141,7 @@ export function ContactForm() {
                 onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
                 onFocus={() => setFocusedField('topic')}
                 onBlur={() => setFocusedField(null)}
-                className="w-full px-4 py-3 bg-white/60 border border-neutral-300 focus:border-[#D4A574] focus:outline-none transition-all duration-300 font-body text-neutral-900 appearance-none cursor-pointer"
+                className="w-full px-4 py-3 bg-white/60 border border-neutral-300 focus:border-brand-bronze focus:outline-none transition-all duration-300 font-body text-neutral-900 appearance-none cursor-pointer"
               >
                 <option value="general">General Inquiry</option>
                 <option value="product">Product Question</option>
@@ -150,13 +150,13 @@ export function ContactForm() {
               </select>
               {/* Custom dropdown arrow */}
               <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                <svg className="w-4 h-4 text-[#A68D76]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-brand-bronze-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
               {focusedField === 'topic' && (
                 <motion.div
-                  className="absolute -bottom-px left-0 h-px bg-gradient-to-r from-[#D4A574] to-[#E8C9A3]"
+                  className="absolute -bottom-px left-0 h-px bronze-gradient"
                   initial={{ width: 0 }}
                   animate={{ width: '100%' }}
                   transition={{ duration: 0.3 }}
@@ -173,7 +173,7 @@ export function ContactForm() {
           >
             <label
               htmlFor="message"
-              className="block text-sm font-body font-medium text-[#3D2F1F] mb-2 tracking-wide"
+              className="block text-sm font-body font-medium text-brand-pine mb-2 tracking-wide"
             >
               Your Message
             </label>
@@ -186,12 +186,12 @@ export function ContactForm() {
                 onBlur={() => setFocusedField(null)}
                 required
                 rows={6}
-                className="w-full px-4 py-3 bg-white/60 border border-neutral-300 focus:border-[#D4A574] focus:outline-none transition-all duration-300 font-body text-neutral-900 placeholder-neutral-400 resize-none"
+                className="w-full px-4 py-3 bg-white/60 border border-neutral-300 focus:border-brand-bronze focus:outline-none transition-all duration-300 font-body text-neutral-900 placeholder-neutral-400 resize-none"
                 placeholder="Tell us about your project or inquiry..."
               />
               {focusedField === 'message' && (
                 <motion.div
-                  className="absolute -bottom-px left-0 h-px bg-gradient-to-r from-[#D4A574] to-[#E8C9A3]"
+                  className="absolute -bottom-px left-0 h-px bronze-gradient"
                   initial={{ width: 0 }}
                   animate={{ width: '100%' }}
                   transition={{ duration: 0.3 }}
@@ -210,13 +210,13 @@ export function ContactForm() {
             <motion.button
               type="submit"
               disabled={status === 'loading' || status === 'success'}
-              className="group relative px-8 py-4 bg-[#3D2F1F] text-white font-body font-medium tracking-wide overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+              className="group relative px-8 py-4 bg-brand-pine text-white font-body font-medium tracking-wide overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
               whileHover={{ scale: status === 'idle' ? 1.02 : 1 }}
               whileTap={{ scale: status === 'idle' ? 0.98 : 1 }}
             >
               {/* Animated background on hover */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#D4A574] to-[#BFA68F]"
+                className="absolute inset-0 bronze-gradient"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3 }}
@@ -255,10 +255,10 @@ export function ContactForm() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="flex items-center gap-3 p-4 bg-[#E8F5E9] border border-[#81C784] rounded-sm"
+                className="flex items-center gap-3 p-4 bg-brand-sage/30 border border-brand-bronze rounded-sm"
               >
-                <CheckCircle className="w-5 h-5 text-[#2E7D32] flex-shrink-0" />
-                <p className="text-sm font-body text-[#1B5E20]">
+                <CheckCircle className="w-5 h-5 text-brand-pine flex-shrink-0" />
+                <p className="text-sm font-body text-brand-pine">
                   Thank you for your message. We&apos;ll get back to you within 24 hours!
                 </p>
               </motion.div>
