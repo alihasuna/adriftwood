@@ -123,7 +123,7 @@ function ShowcaseItem({ item, index, hoveredIndex, setHoveredIndex, mouseXSpring
               <p className="text-xs font-body text-neutral-300 tracking-widest uppercase mb-2">
                 {item.subtitle}
               </p>
-              <h3 className="text-3xl lg:text-4xl font-display font-bold text-neutral-50 mb-3 tracking-tight">
+              <h3 className="text-3xl lg:text-4xl font-display font-normal text-neutral-50 mb-3 tracking-tight">
                 {item.title}
               </h3>
               <motion.p 
@@ -213,7 +213,7 @@ export function EditorialShowcase() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-5xl lg:text-6xl font-display font-bold tracking-tighter text-neutral-900 mb-4">
+        <h2 className="text-5xl lg:text-6xl font-display font-normal tracking-tighter text-neutral-900 mb-4">
           OUR STORY
         </h2>
         <div className="h-px w-24 bronze-gradient" />
