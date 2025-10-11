@@ -23,7 +23,7 @@ export function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
   return (
-    <section ref={sectionRef} className="relative h-screen flex items-center justify-center overflow-hidden bg-neutral-900">
+    <section ref={sectionRef} className="relative h-screen flex items-end justify-start overflow-hidden bg-neutral-900 pb-12 pl-6 lg:pl-12">
       {/* Background Image with Parallax */}
       <motion.div
         className="absolute inset-0"
@@ -32,89 +32,80 @@ export function Hero() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(/images/hero-forest.jpg)',
-            backgroundPosition: 'center',
+            backgroundImage: 'url(/images/hero-bedroom.jpg)',
+            backgroundPosition: 'center bottom',
           }}
         />
         {/* Subtle overlay for better contrast */}
-        <div className="absolute inset-0 bg-neutral-900/40" />
+        <div className="absolute inset-0 bg-neutral-900/20" /> {/* Reduced opacity for brighter image */}
       </motion.div>
 
-      {/* Logo - Left Aligned */}
-      <div className="relative z-10 container mx-auto px-6 lg:px-12">
-        <div className="max-w-7xl">
-          {/* Animated Logo */}
-          <motion.div
-            className="relative mb-6 sm:mb-8 lg:mb-10"
-            initial={{ opacity: 0, y: 60, scale: 0.85 }}
-            animate={{ 
-              opacity: hasLoaded ? 1 : 0, 
-              y: hasLoaded ? 0 : 60, 
-              scale: hasLoaded ? 1 : 0.85 
+      {/* Logo - Bottom Left Aligned */}
+      <div className="relative z-10">
+        {/* Animated Logo - Smaller size to match design */}
+        <motion.div
+          className="mb-2"
+          initial={{ opacity: 0, y: 30, scale: 0.9 }}
+          animate={{ 
+            opacity: hasLoaded ? 1 : 0, 
+            y: hasLoaded ? 0 : 30, 
+            scale: hasLoaded ? 1 : 0.9 
+          }}
+          transition={{ 
+            delay: 0.2, 
+            duration: 1.2, 
+            ease: [0.16, 1, 0.3, 1] 
+          }}
+        >
+          <motion.img
+            src="/logo.svg"
+            alt="Adriftwood Logo"
+            className="w-32 sm:w-40 lg:w-48 h-auto block"
+            style={{ 
+              filter: 'brightness(0) invert(1)'
             }}
-            transition={{ 
-              delay: 0.2, 
-              duration: 1.4, 
-              ease: [0.16, 1, 0.3, 1] 
+            initial={{ filter: 'brightness(0) invert(1) blur(4px)' }}
+            animate={{ filter: 'brightness(0) invert(1) blur(0px)' }}
+            transition={{
+              delay: 0.4,
+              duration: 1.0,
+              ease: [0.16, 1, 0.3, 1]
             }}
-          >
-            {/* Logo with white mask filter and enhanced animations */}
-            <motion.img
-              src="/logo.svg"
-              alt="Adriftwood Logo"
-              className="w-[60vw] sm:w-[50vw] lg:w-[40vw] max-w-xl h-auto block"
-              style={{ 
-                filter: 'brightness(0) invert(1)'
-              }}
-              initial={{ filter: 'brightness(0) invert(1) blur(10px)' }}
-              animate={{ filter: 'brightness(0) invert(1) blur(0px)' }}
-              transition={{
-                delay: 0.5,
-                duration: 1.5,
-                ease: [0.16, 1, 0.3, 1]
-              }}
-              draggable={false}
-            />
-          </motion.div>
-          
-          {/* Tagline */}
-          <motion.div
-            className="relative inline-flex items-center gap-4 sm:gap-6 lg:gap-8"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
+            draggable={false}
+          />
+        </motion.div>
+        
+        {/* Tagline - Smaller text to match design */}
+        <motion.div
+          className="relative flex items-center gap-3"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            delay: 1.0, 
+            duration: 1.0, 
+            ease: [0.16, 1, 0.3, 1] 
+          }}
+        >
+          {/* Bronze accent line - Shorter */}
+          <motion.div 
+            className="h-px w-8 bronze-gradient relative z-10 flex-shrink-0"
+            initial={{ width: 0 }}
+            animate={{ width: '2rem' }}
             transition={{ 
               delay: 1.2, 
-              duration: 1.2, 
+              duration: 0.6, 
               ease: [0.16, 1, 0.3, 1] 
             }}
+          />
+          <p 
+            className="text-xs font-body text-neutral-100 tracking-widest font-light relative z-10"
+            style={{ 
+              textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' 
+            }}
           >
-            {/* Content with enhanced dark shadow for contrast */}
-            <div className="relative flex items-center gap-4 sm:gap-6 lg:gap-8">
-              {/* Dark backdrop for extra contrast */}
-              <div className="absolute inset-0 -inset-x-4 -inset-y-2 bg-gradient-to-r from-black/40 via-black/30 to-transparent blur-xl" />
-              
-              {/* Bronze accent line */}
-              <motion.div 
-                className="h-px w-12 sm:w-16 lg:w-20 bronze-gradient relative z-10 flex-shrink-0"
-                initial={{ width: 0 }}
-                animate={{ width: '5rem' }}
-                transition={{ 
-                  delay: 1.4, 
-                  duration: 0.8, 
-                  ease: [0.16, 1, 0.3, 1] 
-                }}
-              />
-              <p 
-                className="text-sm sm:text-base lg:text-xl font-body text-neutral-50 tracking-[0.15em] max-w-md font-light relative z-10"
-                style={{ 
-                  textShadow: '0 2px 4px rgba(0, 0, 0, 1), 0 4px 8px rgba(0, 0, 0, 0.9), 0 8px 16px rgba(0, 0, 0, 0.8), 2px 2px 12px rgba(0, 0, 0, 0.95)' 
-                }}
-              >
-                TIMELESS DESIGN IN BALANCE WITH NATURE
-              </p>
-            </div>
-          </motion.div>
-        </div>
+            TIMELESS DESIGN IN BALANCE WITH NATURE
+          </p>
+        </motion.div>
       </div>
 
       {/* Minimal Scroll Indicator */}
