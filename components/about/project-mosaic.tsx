@@ -11,25 +11,25 @@ const projects = [
     id: '1',
     title: 'Victoria Workshop',
     location: 'Victoria, BC',
-    image: '/images/projects/workshop-1.jpg',
+    image: '/images/about-workshop.jpg',
   },
   {
     id: '2',
     title: 'Sustainable Forestry',
     location: 'Vancouver Island',
-    image: '/images/projects/forest-1.jpg',
+    image: '/images/hero-forest.jpg',
   },
   {
     id: '3',
     title: 'Residential Install',
     location: 'Oak Bay, BC',
-    image: '/images/projects/install-1.jpg',
+    image: '/images/Products_real/Custom Collection/table&sculpt.jpg',
   },
   {
     id: '4',
     title: 'Craft Exhibition',
     location: 'Vancouver, BC',
-    image: '/images/projects/exhibition-1.jpg',
+    image: '/images/Products_real/Art/IMG_2006.PNG',
   },
 ]
 

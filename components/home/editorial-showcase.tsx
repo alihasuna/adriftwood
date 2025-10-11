@@ -10,11 +10,9 @@ const showcaseItems = [
     id: 1,
     title: 'CRAFTSMANSHIP',
     subtitle: 'The Art of Making',
-    description: 'Our philosophy is rooted in the spirit of research, guaranteeing variety in proposals and the best solution for interiors.',
+    description: 'Every piece is locally handcrafted in Victoria BC by father and son, combining valued ethics, modern design and the art of woodcraft.',
     image: '/images/lookbook/nordic-minimal.jpg',
     link: '/collections',
-    position: { x: '10%', y: '15%' },
-    size: 'large',
   },
   {
     id: 2,
@@ -23,29 +21,16 @@ const showcaseItems = [
     description: 'Every piece we create honors the natural world—from sustainably harvested wood to time-tested joinery techniques.',
     image: '/images/lookbook/forest-retreat.jpg',
     link: '/about',
-    position: { x: '55%', y: '45%' },
-    size: 'medium',
   },
   {
     id: 3,
-    title: 'INNOVATION',
-    subtitle: 'Modern Living',
-    description: 'Combining traditional craftsmanship with contemporary design for modern living.',
+    title: 'PARTNERSHIP',
+    subtitle: 'Resthouse Sleep',
+    description: 'Working with Resthouse Sleep to create the perfect foundation for restorative rest and healthy living.',
     image: '/images/chair.jpg',
-    link: '/store',
-    position: { x: '25%', y: '60%' },
-    size: 'small',
+    link: '/about/partners',
   },
 ]
-
-const getSizeClasses = (size: string) => {
-  switch(size) {
-    case 'large': return 'w-[45vw] h-[60vh]'
-    case 'medium': return 'w-[35vw] h-[45vh]'
-    case 'small': return 'w-[28vw] h-[35vh]'
-    default: return 'w-[35vw] h-[45vh]'
-  }
-}
 
 interface ShowcaseItemProps {
   item: typeof showcaseItems[0]
@@ -57,41 +42,39 @@ interface ShowcaseItemProps {
 }
 
 function ShowcaseItem({ item, index, hoveredIndex, setHoveredIndex, mouseXSpring, mouseYSpring }: ShowcaseItemProps) {
-  // Parallax effect based on mouse position
+  // Reduced parallax effect (50% intensity) for better UX
   const xParallax = useTransform(
     mouseXSpring,
     [-0.5, 0.5],
-    [index % 2 === 0 ? -30 : -50, index % 2 === 0 ? 30 : 50]
+    [-15, 15]
   )
   const yParallax = useTransform(
     mouseYSpring,
     [-0.5, 0.5],
-    [index % 2 === 0 ? -20 : -40, index % 2 === 0 ? 20 : 40]
+    [-10, 10]
   )
 
   return (
     <motion.div
-      className={`absolute ${getSizeClasses(item.size)} group cursor-pointer`}
+      className="group cursor-pointer"
       style={{
-        left: item.position.x,
-        top: item.position.y,
         x: xParallax,
         y: yParallax,
         zIndex: hoveredIndex === index ? 20 : index,
       }}
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ 
         duration: 0.8, 
-        delay: index * 0.2,
+        delay: index * 0.15,
         ease: [0.2, 0.8, 0.2, 1] 
       }}
     >
       <Link href={item.link} className="block h-full">
-        <div className="relative h-full overflow-hidden rounded-sm shadow-2xl">
+        <div className="relative aspect-[4/5] lg:aspect-[3/4] overflow-hidden rounded-sm shadow-2xl">
           {/* Image */}
           <motion.div
             className="absolute inset-0"
@@ -103,7 +86,7 @@ function ShowcaseItem({ item, index, hoveredIndex, setHoveredIndex, mouseXSpring
               alt={item.title}
               fill
               className="object-cover"
-              sizes="50vw"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </motion.div>
 
@@ -111,7 +94,7 @@ function ShowcaseItem({ item, index, hoveredIndex, setHoveredIndex, mouseXSpring
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-neutral-900/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
 
           {/* Content */}
-          <div className="absolute inset-0 p-8 flex flex-col justify-end">
+          <div className="absolute inset-0 p-6 lg:p-8 flex flex-col justify-end">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ 
@@ -203,11 +186,11 @@ export function EditorialShowcase() {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-screen py-24 bg-neutral-50 overflow-hidden"
+      className="relative py-24 lg:py-32 bg-neutral-50 overflow-hidden"
     >
       {/* Section Title */}
       <motion.div 
-        className="container mx-auto px-6 lg:px-12 mb-8"
+        className="container mx-auto px-6 lg:px-12 mb-12"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -219,24 +202,26 @@ export function EditorialShowcase() {
         <div className="h-px w-24 bronze-gradient" />
       </motion.div>
 
-      {/* Interactive Image Grid */}
-      <div className="relative h-[80vh]">
-        {showcaseItems.map((item, index) => (
-          <ShowcaseItem
-            key={item.id}
-            item={item}
-            index={index}
-            hoveredIndex={hoveredIndex}
-            setHoveredIndex={setHoveredIndex}
-            mouseXSpring={mouseXSpring}
-            mouseYSpring={mouseYSpring}
-          />
-        ))}
+      {/* Symmetric Grid - 2 columns on desktop, 1 on mobile */}
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          {showcaseItems.map((item, index) => (
+            <ShowcaseItem
+              key={item.id}
+              item={item}
+              index={index}
+              hoveredIndex={hoveredIndex}
+              setHoveredIndex={setHoveredIndex}
+              mouseXSpring={mouseXSpring}
+              mouseYSpring={mouseYSpring}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Scroll Hint */}
       <motion.div
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 text-center"
+        className="mt-12 text-center hidden lg:block"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

@@ -16,8 +16,8 @@ const lookbookItems = [
   },
   {
     id: '2',
-    title: 'Natural Light',
-    image: '/images/lookbook/natural-light.jpg',
+    title: 'Workshop Craft',
+    image: '/images/about-workshop.jpg',
     productSlug: 'ceramic-table-lamp',
   },
   {
@@ -28,8 +28,8 @@ const lookbookItems = [
   },
   {
     id: '4',
-    title: 'Coastal Living',
-    image: '/images/lookbook/coastal-living.jpg',
+    title: 'Bedroom Collection',
+    image: '/images/hero-bedroom.jpg',
     productSlug: 'walnut-side-table',
   },
 ]

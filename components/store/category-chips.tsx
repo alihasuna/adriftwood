@@ -5,10 +5,9 @@ import { cn } from '@/lib/cn'
 
 const categories: { value: Category | 'all'; label: string }[] = [
   { value: 'all', label: 'All' },
-  { value: 'chairs', label: 'Chairs' },
-  { value: 'tables', label: 'Tables' },
-  { value: 'lamps', label: 'Lamps' },
-  { value: 'shelves', label: 'Shelves' },
+  { value: 'beds', label: 'Bed Frames' },
+  { value: 'side-tables', label: 'Side Tables' },
+  { value: 'art', label: 'Art & Sculptures' },
 ]
 
 interface CategoryChipsProps {

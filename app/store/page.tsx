@@ -19,7 +19,7 @@ function StoreContent() {
   )
   const [sortBy, setSortBy] = useState<'newest' | 'price-asc' | 'price-desc' | 'name'>('newest')
   const [isFiltersOpen, setIsFiltersOpen] = useState(false)
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000])
+  const [priceRange, setPriceRange] = useState<[number, number]>([0, 7000])
   const [selectedMaterials, setSelectedMaterials] = useState<string[]>([])
 
   // Filter products
@@ -58,7 +58,7 @@ function StoreContent() {
             Shop
           </h1>
           <p className="text-lg font-body text-neutral-600">
-            Handcrafted furniture designed to last generations
+            Premium bed frames, side tables, and driftwood art made in Victoria, BC
           </p>
         </div>
       </div>

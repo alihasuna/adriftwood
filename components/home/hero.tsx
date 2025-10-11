@@ -40,27 +40,46 @@ export function Hero() {
         <div className="absolute inset-0 bg-neutral-900/40" />
       </motion.div>
 
-      {/* Oversized Typography - Center */}
+      {/* Logo - Left Aligned */}
       <div className="relative z-10 container mx-auto px-6 lg:px-12">
         <div className="max-w-7xl">
-          {/* Elegant animated title - Alta Caption Regular */}
-          <h1 className="text-[14vw] sm:text-[12vw] lg:text-[11vw] font-display font-normal text-neutral-50 leading-[0.9] mb-12">
-            <div 
-              className={`overflow-hidden ${hasLoaded ? 'animate-hero-reveal' : 'opacity-0'}`}
-              style={{ animationDelay: '0.3s', animationFillMode: 'both' }}
-            >
-              ADRIFT
-            </div>
-            <div 
-              className={`overflow-hidden ${hasLoaded ? 'animate-hero-reveal' : 'opacity-0'}`}
-              style={{ animationDelay: '0.6s', animationFillMode: 'both' }}
-            >
-              WOOD
-            </div>
-          </h1>
-          
+          {/* Animated Logo */}
           <motion.div
-            className="relative inline-flex items-center gap-6 sm:gap-8"
+            className="relative mb-6 sm:mb-8 lg:mb-10"
+            initial={{ opacity: 0, y: 60, scale: 0.85 }}
+            animate={{ 
+              opacity: hasLoaded ? 1 : 0, 
+              y: hasLoaded ? 0 : 60, 
+              scale: hasLoaded ? 1 : 0.85 
+            }}
+            transition={{ 
+              delay: 0.2, 
+              duration: 1.4, 
+              ease: [0.16, 1, 0.3, 1] 
+            }}
+          >
+            {/* Logo with white mask filter and enhanced animations */}
+            <motion.img
+              src="/logo.svg"
+              alt="Adriftwood Logo"
+              className="w-[60vw] sm:w-[50vw] lg:w-[40vw] max-w-xl h-auto block"
+              style={{ 
+                filter: 'brightness(0) invert(1)'
+              }}
+              initial={{ filter: 'brightness(0) invert(1) blur(10px)' }}
+              animate={{ filter: 'brightness(0) invert(1) blur(0px)' }}
+              transition={{
+                delay: 0.5,
+                duration: 1.5,
+                ease: [0.16, 1, 0.3, 1]
+              }}
+              draggable={false}
+            />
+          </motion.div>
+          
+          {/* Tagline */}
+          <motion.div
+            className="relative inline-flex items-center gap-4 sm:gap-6 lg:gap-8"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ 
@@ -70,15 +89,15 @@ export function Hero() {
             }}
           >
             {/* Content with enhanced dark shadow for contrast */}
-            <div className="relative flex items-center gap-6 sm:gap-8">
+            <div className="relative flex items-center gap-4 sm:gap-6 lg:gap-8">
               {/* Dark backdrop for extra contrast */}
               <div className="absolute inset-0 -inset-x-4 -inset-y-2 bg-gradient-to-r from-black/40 via-black/30 to-transparent blur-xl" />
               
               {/* Bronze accent line */}
               <motion.div 
-                className="h-px w-16 sm:w-20 bronze-gradient relative z-10"
+                className="h-px w-12 sm:w-16 lg:w-20 bronze-gradient relative z-10 flex-shrink-0"
                 initial={{ width: 0 }}
-                animate={{ width: 80 }}
+                animate={{ width: '5rem' }}
                 transition={{ 
                   delay: 1.4, 
                   duration: 0.8, 
@@ -86,7 +105,7 @@ export function Hero() {
                 }}
               />
               <p 
-                className="text-base sm:text-lg lg:text-xl font-body text-neutral-50 tracking-[0.15em] max-w-md font-light relative z-10"
+                className="text-sm sm:text-base lg:text-xl font-body text-neutral-50 tracking-[0.15em] max-w-md font-light relative z-10"
                 style={{ 
                   textShadow: '0 2px 4px rgba(0, 0, 0, 1), 0 4px 8px rgba(0, 0, 0, 0.9), 0 8px 16px rgba(0, 0, 0, 0.8), 2px 2px 12px rgba(0, 0, 0, 0.95)' 
                 }}

@@ -9,8 +9,8 @@ import { getFAQSchema, getLocalBusinessSchema } from '@/lib/structured-data'
 import { createMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = createMetadata({
-  title: 'Handcrafted Sustainable Furniture',
-  description: 'Premium handcrafted furniture made from sustainably harvested wood in Victoria, BC. Shop chairs, tables, lamps, and shelves designed to last generations.',
+  title: 'Handcrafted Bed Frames & Furniture',
+  description: 'Premium handcrafted bed frames, side tables, and driftwood art made from sustainably sourced Canadian wood in Victoria, BC. Built to last generations with Zero VOC finishes.',
   path: '/',
 })
 

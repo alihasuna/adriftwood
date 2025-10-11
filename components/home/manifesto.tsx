@@ -93,16 +93,50 @@ export function Manifesto() {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
           >
-            <p className="text-lg lg:text-xl font-body text-neutral-700 leading-relaxed">
-              Every piece we create honors the natural world—from sustainably harvested wood to 
-              time-tested joinery techniques.
+            <p className="text-lg lg:text-xl font-body text-neutral-700 leading-relaxed mb-8">
+              Each piece is locally handcrafted in Victoria BC by father and son. A combination of valued ethics, 
+              modern design and the art of woodcraft met with quality for generations.
             </p>
             
-            <p className="text-base lg:text-lg font-body text-neutral-600 leading-relaxed">
-              We believe in furniture that lasts generations, reducing waste and celebrating 
-              the beauty of honest materials. Our workshop in Victoria, BC sits surrounded by 
-              the forests that inspire us.
-            </p>
+            <div className="space-y-6">
+              <div className="flex gap-4 items-start">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-bronze/20 flex items-center justify-center">
+                  <span className="text-brand-bronze font-bold text-lg">1</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-body font-semibold text-neutral-900 mb-2">Buy Canadian, Be Canadian</h3>
+                  <p className="text-base font-body text-neutral-600 leading-relaxed">
+                    Adriftwood Co. is based in Victoria BC, Canada. Every piece created in Canada using local 
+                    Vancouver Island salvaged wood and Canadian sourced materials whenever possible.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex gap-4 items-start">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-bronze/20 flex items-center justify-center">
+                  <span className="text-brand-bronze font-bold text-lg">2</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-body font-semibold text-neutral-900 mb-2">Low & Zero VOC</h3>
+                  <p className="text-base font-body text-neutral-600 leading-relaxed">
+                    Working to improve health. We strive to work with Zero VOC products. 
+                    A key value at Adriftwood is the priceless value of health.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex gap-4 items-start">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-bronze/20 flex items-center justify-center">
+                  <span className="text-brand-bronze font-bold text-lg">3</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-body font-semibold text-neutral-900 mb-2">Strongest Beds On The Market</h3>
+                  <p className="text-base font-body text-neutral-600 leading-relaxed">
+                    Adriftwood Co. designs are created to last a lifetime. No squeaks and a restful sleep.
+                  </p>
+                </div>
+              </div>
+            </div>
 
             <Link
               href="/about"

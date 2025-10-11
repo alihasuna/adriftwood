@@ -6,24 +6,19 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 
 const categories = [
   {
-    name: 'Chairs',
-    slug: 'chairs',
-    image: '/images/categories/chairs.jpg',
+    name: 'Bed Frames',
+    slug: 'beds',
+    image: '/images/Products_real/Cedar Crest/openning photo.jpg',
   },
   {
-    name: 'Tables',
-    slug: 'tables',
-    image: '/images/categories/tables.jpg',
+    name: 'Side Tables',
+    slug: 'side-tables',
+    image: '/images/Products_real/Cedar Crest Night Stand/#1 CEDAR-NIGHTSTAND-SIDETABLE.png',
   },
   {
-    name: 'Lamps',
-    slug: 'lamps',
-    image: '/images/categories/lamps.jpg',
-  },
-  {
-    name: 'Shelves',
-    slug: 'shelves',
-    image: '/images/categories/shelves.jpg',
+    name: 'Art & Sculptures',
+    slug: 'art',
+    image: '/images/Products_real/Art/Home4.JPG',
   },
 ]
 
@@ -78,7 +73,7 @@ export function CategoryTiles() {
 
         {/* Categories Grid - Dynamic with scroll effects */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}

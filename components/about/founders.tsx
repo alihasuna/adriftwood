@@ -9,39 +9,27 @@ import { useRef } from 'react'
 const founders = [
   {
     id: 1,
-    name: 'Sarah Chen',
-    role: 'Master Craftsperson & Co-Founder',
-    bio: 'With over 20 years of experience in sustainable woodworking, Sarah brings a deep understanding of traditional joinery and modern design. Her vision has shaped Adriftwood into a leader in eco-conscious furniture.',
-    quote: 'Every piece of wood tells a story. Our job is to honor that narrative while creating something timeless.',
-    image: '/images/team/sarah-chen.jpg',
-    email: 'sarah@adriftwood.co',
+    name: 'Jake Tchida',
+    role: 'Founder & Master Craftsman',
+    bio: 'Jake\'s journey began in the forests of Northern BC, planting trees and dreaming of creating something meaningful. His passion for working with his hands and innate creativity led to the founding of Adriftwood Co. With guidance from his father and an unwavering desire to create, Jake has built a company that combines artistry with craftsmanship, honoring the wood and the memories held within each piece.',
+    quote: 'Working with my hands has always been natural. Creativity has come from within since I was a child. Adriftwood is a combination of these two things.',
+    image: '/images/about-workshop.jpg',
+    email: '',
     linkedin: '#',
-    focus: 'Design & Craftsmanship',
-    achievement: 'Award-winning furniture designer featured in Design Canada',
+    focus: 'Craftsmanship & Design',
+    achievement: 'Founded Adriftwood Co., bringing together art, ethics, and woodcraft',
   },
   {
     id: 2,
-    name: 'Marcus Whitfield',
-    role: 'Sustainability Director & Co-Founder',
-    bio: 'Marcus combines his forestry background with a passion for renewable practices. He oversees our supply chain, ensuring every piece of wood comes from certified sustainable sources.',
-    quote: 'Sustainability isn\'t a compromise—it\'s an enhancement. The best designs work in harmony with nature.',
-    image: '/images/team/marcus-whitfield.jpg',
-    email: 'marcus@adriftwood.co',
+    name: 'Time Tchida',
+    role: 'Co-Founder & Forest Steward',
+    bio: 'Time spent 36 years planting nearly 750 million trees—a straight line that would circle the planet 42 times. With a double major in philosophy and religious studies, he brings a unique perspective on connection, meaning, and contribution. Working alongside his son Jake, Time ensures that Adriftwood honors what wood gives us through the art of furniture, creating pieces that hold the memory of their work and the forests they cherish.',
+    quote: 'We are all connected and we are all looking for meaning. We need to be creative and we need to contribute. Working with my son Jake is a blessing.',
+    image: '/images/hero-forest.jpg',
+    email: '',
     linkedin: '#',
-    focus: 'Sustainable Sourcing',
-    achievement: 'Led the company to carbon-neutral production in 2024',
-  },
-  {
-    id: 3,
-    name: 'Elena Rodriguez',
-    role: 'Creative Director & Co-Founder',
-    bio: 'Elena\'s architectural background informs her minimalist aesthetic. She believes furniture should enhance spaces without overwhelming them, creating calm in modern living.',
-    quote: 'Less is more, but only when every detail is intentional. Minimalism requires maximum care.',
-    image: '/images/team/elena-rodriguez.jpg',
-    email: 'elena@adriftwood.co',
-    linkedin: '#',
-    focus: 'Design Philosophy',
-    achievement: 'Launched 3 award-winning collections since 2018',
+    focus: 'Sustainability & Heritage',
+    achievement: '750 million trees planted over 36 years of forest stewardship',
   },
 ]
 
@@ -163,11 +151,10 @@ export function Founders() {
           </motion.div>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-brand-pine mb-6">
-            Meet the Founders
+            Father & Son
           </h2>
           <p className="text-lg lg:text-xl font-body text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-            Three visionaries united by a shared passion for sustainable craftsmanship 
-            and timeless design
+            Two generations united by creativity, craftsmanship, and a deep respect for the natural world
           </p>
           
           {/* Bronze decorative lines */}
@@ -186,7 +173,7 @@ export function Founders() {
         </motion.div>
 
         {/* Founders Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 max-w-6xl mx-auto">
           {founders.map((founder, index) => (
             <motion.div
               key={founder.id}
@@ -391,28 +378,6 @@ export function Founders() {
                             </div>
                           </motion.div>
 
-                          {/* Contact */}
-                          <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.6 }}
-                            className="flex gap-4 mt-auto"
-                          >
-                            <a
-                              href={`mailto:${founder.email}`}
-                              className="flex items-center gap-2 text-sm font-body text-neutral-700 hover:text-brand-pine transition-colors"
-                            >
-                              <Mail className="h-5 w-5" />
-                              <span>Email</span>
-                            </a>
-                            <a
-                              href={founder.linkedin}
-                              className="flex items-center gap-2 text-sm font-body text-neutral-700 hover:text-brand-pine transition-colors"
-                            >
-                              <Linkedin className="h-5 w-5" />
-                              <span>LinkedIn</span>
-                            </a>
-                          </motion.div>
 
                           {/* Close Button with bronze gradient */}
                           <motion.button

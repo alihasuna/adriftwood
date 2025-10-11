@@ -71,45 +71,53 @@ export function AboutManifesto() {
               variants={fadeBlurUp}
               className="text-xl sm:text-2xl lg:text-3xl leading-relaxed text-center max-w-4xl mx-auto font-light text-brand-pine"
             >
-              Adriftwood Co. was born from a simple belief: furniture should honor the materials 
-              from which it&apos;s made and the spaces it inhabits.
+              Adrift represents the untethered flow of one&apos;s life. We all experience being adrift. 
+              The balance to this state is finding direction and taking action.
             </motion.p>
             
             <motion.div
               variants={fadeBlurUp}
-              className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+              className="bg-white p-8 lg:p-12 rounded-2xl shadow-sm border border-brand-sage/20 max-w-4xl mx-auto"
             >
-              <div className="bg-white p-8 rounded-2xl shadow-sm border border-brand-sage/20 hover:shadow-md transition-shadow duration-300">
-                <h3 className="text-lg font-display font-semibold text-brand-pine mb-3">
-                  Sustainable Materials
-                </h3>
-                <p className="text-base leading-relaxed text-neutral-600">
-                  We work exclusively with sustainably harvested hardwoods—white oak, walnut, maple, 
-                  and ash—each chosen for its beauty, strength, and grain.
-                </p>
-              </div>
-
-              <div className="bg-white p-8 rounded-2xl shadow-sm border border-brand-sage/20 hover:shadow-md transition-shadow duration-300">
-                <h3 className="text-lg font-display font-semibold text-brand-pine mb-3">
-                  Timeless Craft
-                </h3>
-                <p className="text-base leading-relaxed text-neutral-600">
-                  Every cut, joint, and finish is executed by hand, following time-tested techniques 
-                  passed down through generations of woodworkers.
-                </p>
-              </div>
+              <h3 className="text-2xl font-display font-semibold text-brand-pine mb-6 text-center">
+                Jake&apos;s Story
+              </h3>
+              <p className="text-base lg:text-lg leading-relaxed text-neutral-700 mb-6">
+                &ldquo;The idea of Adriftwood Co. was born in a tent in the middle of nowhere in Northern BC, 
+                while laying on my back trying to ignore the sting of blisters and ache of fatigue. 
+                Planting trees and brushing blocks is the perfect place to dream about anything else you 
+                would rather be doing. The time spent in between those grueling seasons of work is a perfect 
+                representation of letting your life drift.
+              </p>
+              <p className="text-base lg:text-lg leading-relaxed text-neutral-700">
+                Working with my hands has always been natural. Creativity has come from within since I was a child. 
+                Adriftwood is a combination of these two things. With an immense amount of help and guidance from my father 
+                in addition to the desire to create, Adriftwood has finally come together.&rdquo;
+              </p>
             </motion.div>
             
-            <motion.p
+            <motion.div
               variants={fadeBlurUp}
-              className="text-lg sm:text-xl leading-relaxed text-center max-w-3xl mx-auto text-neutral-600"
+              className="bg-white p-8 lg:p-12 rounded-2xl shadow-sm border border-brand-sage/20 max-w-4xl mx-auto"
             >
-              Our designs are minimal but warm, functional yet poetic. We reject the disposable 
-              culture of mass production in favor of slow craftsmanship: pieces built to last 
-              lifetimes, to patina gracefully, and to bring a sense of groundedness to your home.
-            </motion.p>
+              <h3 className="text-2xl font-display font-semibold text-brand-pine mb-6 text-center">
+                Time&apos;s Perspective
+              </h3>
+              <p className="text-base lg:text-lg leading-relaxed text-neutral-700 mb-6">
+                At 22 years old, I started planting trees. 36 years later my company had planted nearly 750 million trees. 
+                That number equates to a straight line of trees, planted three feet apart that would go around the planet 42 times. 
+                I have been blessed to work in the woods and put back in an industry that has given all of us so much. 
+              </p>
+              <p className="text-base lg:text-lg leading-relaxed text-neutral-700">
+                Adriftwood Company is honoring what wood gives us through the art of furniture. My education was not in business or wood working, 
+                I did a double major philosophy and religious studies. What I have taken from tree planting, business, school and just getting older 
+                is that we are all connected and we are all looking for meaning, we need to be creative and we need to contribute. 
+                Working with my son Jake is a blessing. We get to be creative, work with wood, give back and create pieces of art that hold 
+                the memory of our work.
+              </p>
+            </motion.div>
             
-            {/* Featured callout with bronze gradient */}
+            {/* Sleep Science callout with bronze gradient */}
             <motion.div 
               variants={fadeBlurUp}
               className="relative bronze-gradient p-12 lg:p-16 rounded-2xl mt-16 overflow-hidden"
@@ -119,13 +127,20 @@ export function AboutManifesto() {
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-brand-pine/10 rounded-full blur-2xl" />
               
               <div className="relative z-10">
-                <p className="text-xl sm:text-2xl lg:text-3xl leading-relaxed font-light text-center max-w-3xl mx-auto text-white">
-                  Sustainability isn&apos;t a marketing term for us—it&apos;s a core value.
+                <h3 className="text-2xl lg:text-3xl font-display font-semibold text-white mb-6 text-center">
+                  Sleep Science Meets Craftsmanship
+                </h3>
+                <p className="text-base sm:text-lg leading-relaxed font-light text-center max-w-3xl mx-auto text-white/95 mb-6">
+                  As awareness grows around the critical role sleep plays in overall health, more people are rethinking 
+                  the foundations of their sleep environment. Quality sleep is directly linked to improved immune function, 
+                  mental clarity, emotional regulation, and long-term cardiovascular health.
                 </p>
-                <p className="text-base sm:text-lg leading-relaxed font-light text-center max-w-2xl mx-auto text-white/90 mt-6">
-                  We source local materials when possible, minimize waste through thoughtful design, and partner with 
-                  certified forestry programs. Our workshop runs on renewable energy, and we&apos;re constantly 
-                  refining our processes to reduce our environmental footprint.
+                <p className="text-base sm:text-lg leading-relaxed font-light text-center max-w-3xl mx-auto text-white/95">
+                  At Adriftwood, we design our bed frames around robust 5.5-inch slats to create a more stable, supportive 
+                  foundation that helps your mattress maintain proper spinal alignment and weight distribution throughout the night. 
+                  This principal design paired with zero VOC beeswax finish and naturally antimicrobial salvaged cedar, our frames 
+                  eliminate exposure to harmful chemicals and allergens. As science continues to emphasize the importance of 
+                  restorative sleep, investing in a thoughtfully engineered, non-toxic bed frame is no longer a luxury—it&apos;s a health decision.
                 </p>
               </div>
             </motion.div>
